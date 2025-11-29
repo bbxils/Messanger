@@ -1,6 +1,5 @@
 public class Group {
 
-    // Поля класса
     private int id;
     private String name;
     private User[] members;
@@ -18,9 +17,7 @@ public class Group {
         if (memberCount < number) {
             members[memberCount] = user;
             memberCount++;
-        } else {
-            System.out.println("группа полнаяя");
-        }
+        } else { System.out.println("группа полная"); }
     }
 
     public void removeMember(User user) {
@@ -28,12 +25,11 @@ public class Group {
             if (members[i] == user) {
                 members[i] = members[memberCount - 1]; //последний теперь присоединившийся
                 members[memberCount - 1] = null;
-                memberCount--; //
-                break; //
+                memberCount--;
+                break;
             }
         }
     }
-
     //новый массив
     public User[] getMembers() {
         User[] currentMembers = new User[memberCount];
